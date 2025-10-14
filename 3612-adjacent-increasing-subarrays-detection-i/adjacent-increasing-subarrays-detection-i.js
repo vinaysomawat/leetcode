@@ -13,14 +13,12 @@ var hasIncreasingSubarrays = function(nums, k) {
         if(nums[i]>nums[i-1]) {
             count++;
         } else {
-            console.log(lastcount, count);
             if(lastcount>=k && count>=k) return true;
             if(count/2>=k || lastcount/2>=k) return true;
             lastcount=count;
             count=1;
         }
     }
-    console.log(lastcount, count);
     if(lastcount>=k && count>=k) return true;
     if(count/2>=k || lastcount/2>=k) return true;
     return false;
